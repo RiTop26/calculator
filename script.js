@@ -25,4 +25,26 @@ const divide =function(a, b) {
         return a / b;
     }
 }
-console.log(divide(12, 0))
+console.log(divide(12, 0));
+
+// Create three variable;
+let firstNumber = "";
+let secondNumber = "";
+let theOperator = "";
+
+// Operating two numbers and an operator
+const operate = function(firstNumber, theOperator, secondNumber) {
+    if (theOperator == "+") {
+        return add(firstNumber, secondNumber);
+    }
+    else if (theOperator == "-") {
+        return subtract(firstNumber, secondNumber);
+    }
+    else if(theOperator == "*") {
+        return multiply(firstNumber, secondNumber);
+    }
+    else if (theOperator == "/") {
+        return divide(firstNumber, secondNumber)
+    }
+}
+console.log(operate(12, "*", 5));
