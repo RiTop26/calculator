@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.calculator {
+    border: 2px solid black;
+    padding: 100px 50px;
+    margin: 32px;
+    background-color: aliceblue;
+}
+
+.btn {
+    margin: 8px 0;
+}
+
+.display {
+    border: 1px solid black;
+    margin-bottom: 16px;
+    padding: 8px 40px;
+    font-size: 28px;
+    background-color: white;
+}
+
+.zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .equal, .addition, .multiplication, .division {
+    font-size: 24px;
+    padding: 24px;
+    border-radius: 10px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.subtraction {
+    font-size: 24px;
+    padding: 24px 27px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.clear {
+    font-size: 24px;
+    padding: 24px 14px;
+    border-radius: 10px;
+}
+
+.equal, .addition, .subtraction, .multiplication, .division {
+    background-color: wheat;
+}
