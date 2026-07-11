@@ -48,3 +48,40 @@ const operate = function(firstNumber, theOperator, secondNumber) {
     }
 }
 console.log(operate(12, "*", 5));
+
+// Create a function that update numbers
+const updateDigit = function(digits) {
+
+}
+// Attach an event to the digit buttons
+const digitElement = document.querySelectorAll(".digit");
+for (let i = 0; i < digitElement.length; i++) {
+    digitElement[i].addEventListener("click", updateDigit);
+}
+
+
+// Create a function that handle the operators
+const handleOperator = function(operators) {
+
+}
+// Attach an event to the operator buttons
+const operatorElement = document.querySelectorAll(".operator");
+for (let i = 0; i < operatorElement.length; i++) {
+    operatorElement[i].addEventListener("click", handleOperator);
+}
+
+// Create a function that execute when equal button is clicked
+const equalFunction = function() {
+
+}
+// Attach an event to the equal button
+const equals = document.querySelector(".equal");
+equals.addEventListener("click", equalFunction);
+
+// A function for the clear button
+const clearFunction = function() {
+
+}
+// Attach an event to the clear button
+const theClear = document.querySelector(".clear");
+theClear.addEventListener("click", clearFunction);
