@@ -50,8 +50,16 @@ const operate = function(firstNumber, theOperator, secondNumber) {
 console.log(operate(12, "*", 5));
 
 // Create a function that update numbers
+const displayElement = document.querySelector(".display");
 const updateDigit = function(digits) {
-
+    if(theOperator == "") {
+        firstNumber += digits.target.textContent;
+        displayElement.textContent = firstNumber;
+    }
+    else {
+        secondNumber += digits.target.textContent;
+        displayElement.textContent = secondNumber;
+    }
 }
 // Attach an event to the digit buttons
 const digitElement = document.querySelectorAll(".digit");
@@ -63,6 +71,20 @@ for (let i = 0; i < digitElement.length; i++) {
 // Create a function that handle the operators
 const handleOperator = function(operators) {
 
+    if(theOperator == "") {
+        theOperator = operators.target.textContent;
+    }
+
+    // Convert operators
+    if (theOperator == "×") {
+        theOperator = "*";
+    }
+    else if (theOperator == "÷") {
+        theOperator = "/";
+    }
+    else {
+        theOperator = theOperator;
+    }
 }
 // Attach an event to the operator buttons
 const operatorElement = document.querySelectorAll(".operator");
@@ -72,7 +94,9 @@ for (let i = 0; i < operatorElement.length; i++) {
 
 // Create a function that execute when equal button is clicked
 const equalFunction = function() {
-
+    if(firstNumber != "" && theOperator != "" && secondNumber != "") {
+        displayElement.textContent = operate(firstNumber, theOperator, secondNumber);
+    }
 }
 // Attach an event to the equal button
 const equals = document.querySelector(".equal");
