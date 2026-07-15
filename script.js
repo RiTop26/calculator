@@ -19,7 +19,7 @@ console.log(multiply(12, 7));
 // Divide two number
 const divide =function(a, b) {
     if (b == 0) {
-        return "Undefined";
+        return "Nope, try again!";
     }
     else {
         return a / b;
@@ -70,8 +70,19 @@ for (let i = 0; i < digitElement.length; i++) {
 
 // Create a function that handle the operators
 const handleOperator = function(operators) {
+    if(firstNumber != "" && theOperator != "" && secondNumber != "") {
+        firstNumber = operate(Number(firstNumber), theOperator, Number(secondNumber));
+        displayElement.textContent = Number(Number(firstNumber).toFixed(5));
+        secondNumber = "";
+        theOperator = operators.target.textContent;
+    }
 
-    if(theOperator == "") {
+    else if (firstNumber != "" && secondNumber == "") {
+    // replace the current operator with the new one
+        theOperator = operators.target.textContent;
+    }
+
+    else if(theOperator == "") {
         theOperator = operators.target.textContent;
     }
 
@@ -95,7 +106,21 @@ for (let i = 0; i < operatorElement.length; i++) {
 // Create a function that execute when equal button is clicked
 const equalFunction = function() {
     if(firstNumber != "" && theOperator != "" && secondNumber != "") {
-        displayElement.textContent = operate(firstNumber, theOperator, secondNumber);
+        const result = operate(Number(firstNumber), theOperator, Number(secondNumber));
+
+        let rounded;
+        if(typeof result == "string") {
+            rounded = result
+        }
+        else {
+            rounded = Number(Number(result).toFixed(5));
+        }
+
+        displayElement.textContent = rounded;
+        firstNumber = displayElement.textContent;
+        secondNumber = "";
+        theOperator = "";
+        firstNumber = "";
     }
 }
 // Attach an event to the equal button
@@ -104,7 +129,10 @@ equals.addEventListener("click", equalFunction);
 
 // A function for the clear button
 const clearFunction = function() {
-
+    firstNumber = "";
+    theOperator = "";
+    secondNumber = "";
+    displayElement.textContent = 0;
 }
 // Attach an event to the clear button
 const theClear = document.querySelector(".clear");
