@@ -21,6 +21,7 @@
     padding: 8px 40px;
     font-size: 28px;
     background-color: white;
+    text-align: right;
 }
 
 .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .equal, .addition, .multiplication, .division {
